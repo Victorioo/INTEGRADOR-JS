@@ -58,6 +58,8 @@ const addToCart = (event) => {
   
   if (false) { // TODO: Cambiar el false por una funcion o constante, que verifique si el producto ya esta en el carrito
 
+  } else {
+    
   }
 
 };
