@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  background-color: #1a1a1a;
+  color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  z-index: 20;
+}
+
+.hover-product {
+  transition: width 100ms, height 100ms;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 180px;
+  font-size: 2rem;
+  color: white;
+}
+
+.hover-product::after {
+  content: "View";
+}
+
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 5rem;
+  width: 100vw;
+  height: 80px;
+  transition: padding 450ms ease, background 500ms ease-in-out;
+  z-index: 10;
+}
+
+.downHeader {
+  height: 70px;
+  padding: 2.5rem 5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.downHeader a,
+.downHeader h1 {
+  color: gray;
+}
+
+.downHeader a:hover {
+  color: black;
+}
+
+.downHeader img {
+  color: white;
+}
+header h1 {
+  color: white;
+}
+
+header ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-weight: 500;
+}
+
+header a {
+  color: #fbeaf4ff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: color 150ms ease;
+}
+
+header a:hover {
+  color: white;
+}
+
+.cart_container {
+  position: fixed;
+  top: 100px;
+  right: 60px;
+  transform: translateX(130%) translateY(-150%);
+  background-color: white;
+  width: 20vw;
+  height: 20vw;
+  border-radius: 1.5rem 0 1.5rem 1.5rem;
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 350ms ease;
+}
+
+.svg {
+  position: relative;
+}
+
+.bubble_cart {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 1rem;
+  height: 1rem;
+  background-color: pink;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  font-weight: 600;
+}
+
+.open {
+  transform: translateX(0vw);
+  display: block;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(110vh - 80px);
+  background: url("https://vimcosmo.com/pics/home-cover.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero h1 {
+  font-size: 6rem;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  user-select: none;
+}
+
+main {
+  background-color: #fefefe;
+}
+
+.organic__section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1);
+  align-items: center;
+  height: 110vh;
+}
+
+.organic__section img {
+  max-width: 80%;
+  border-radius: 0 15rem 15rem 0;
+}
+
+.organic__section div {
+  width: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 55px;
+}
+
+.organic__section h1 {
+  width: 15ch;
+  font-size: 4rem;
+  text-wrap: wrap;
+  font-weight: 600;
+}
+
+.organic__section p {
+  color: gray;
+  font-weight: 500;
+  font-size: 1.4rem;
+  width: 45ch;
+}
+
+.organic__section button {
+  border: none;
+  background: none;
+  padding: 2rem 4rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: "Poppins";
+  cursor: pointer;
+  background-color: #e6f2ffff;
+  border-radius: 100px;
+  color: #158effff;
+  transition: color 200ms ease-out, background 200ms ease-out;
+}
+
+.organic__section button:hover {
+  color: white;
+  background: #158effff;
+}
+
+.popular-products__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+.popular-products__section h1 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.products__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1);
+  gap: 40px;
+  padding: 1rem;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.product img {
+  border-radius: 4rem;
+  width: 15vw;
+  object-fit: contain;
+  transition: transform 350ms ease;
+}
+
+.product img:hover {
+  transform: scale(1.05);
+}
+
+.product h1 {
+  font-size: 2rem;
+}
+.product h2 {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.product button {
+  background-color: #f9bddeff;
+  border: none;
+  padding: 0.5rem 2rem;
+  font-size: 1.5rem;
+  border-radius: 5rem;
+  color: black;
+  font-family: "Poppins";
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 100ms ease, color 100ms ease, padding 150ms ease-in-out;
+}
+
+.product button:hover {
+  padding: 0.5rem 2.2rem;
+  background: #158effff;
+  color: white;
+}

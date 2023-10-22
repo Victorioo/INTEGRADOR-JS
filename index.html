@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ecommerce - Victorio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="custom-cursor"></div>
+    <header>
+      <h1>Vim</h1>
+      <ul>
+        <li><a href="#">Home </a></li>
+        <li>
+          <a href="#">Shop <i class="fa-solid fa-chevron-down"></i></a>
+        </li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li class="svg">
+          <img src="./assets/cart.svg" class="cart_icon svg" />
+          <small class="bubble_cart">0</small>
+        </li>
+      </ul>
+    </header>
+    <ul class="cart_container"></ul>
+    <section class="hero">
+      <h1>Beauty & Cosmetic <br />Products</h1>
+    </section>
+    <main>
+      <section class="organic__section">
+        <img src="https://vimcosmo.com/pics/organic.webp" />
+        <div>
+          <h1>Made Only With Organic Materials</h1>
+          <p>
+            Feel good about yourself with our 100% vegan formulas free from
+            phthalates, parabens, triclosan, triclocarban, and hydroquinone.
+          </p>
+          <button>Browse products</button>
+        </div>
+      </section>
+      <section class="popular-products__section">
+        <h1>Popular Products</h1>
+        <div class="products__container"></div>
+      </section>
+    </main>
+    <script src="./main.js"></script>
+    <script src="./animations.js"></script>
+  </body>
+</html>
