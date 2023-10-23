@@ -12,6 +12,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="animation.css">
   </head>
   <body>
     <div class="custom-cursor"></div>
@@ -26,11 +27,20 @@
         <li><a href="#">Contact</a></li>
         <li class="svg">
           <img src="./assets/cart.svg" class="cart_icon svg" />
-          <small class="bubble_cart">0</small>
+          <small class="cart_bubble"></small>
         </li>
       </ul>
     </header>
-    <ul class="cart_container"></ul>
+    <nav class="cart_container">
+      <ul class="cart_products">
+      </ul>
+      <div class="checkout_container">
+        <h4>Total:</h4>
+        <span class="price"></span>
+        <button class="checkout-btn">Checkout</button>
+        <button class="empty_cart">Vaciar carrito</button>
+      </div>
+    </nav>
     <section class="hero">
       <h1>Beauty & Cosmetic <br />Products</h1>
     </section>
@@ -46,12 +56,15 @@
           <button>Browse products</button>
         </div>
       </section>
+      <!-- Esta seccion se renderiza con JS. -->
       <section class="popular-products__section">
         <h1>Popular Products</h1>
         <div class="products__container"></div>
       </section>
+
     </main>
-    <script src="./main.js"></script>
+    <script src="./objectdata.js"></script>
+    <script src="./cart.js"></script>
     <script src="./animations.js"></script>
   </body>
 </html>
