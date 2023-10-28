@@ -9,7 +9,9 @@ const cartProduct = document.querySelector(".cart_product"); // Producto
 const priceText = document.querySelector(".price"); // Texto del precio total
 const checkoutBtn = document.querySelector(".checkout-btn"); // Button finalizar compra
 const openCartIcon = document.querySelector(".cart_container");
-const emptyCartButton = document.querySelector(".empty_cart")
+const emptyCartButton = document.querySelector(".empty_cart");
+const showMoreBtn = document.querySelector(".show_more_btn");
+const blurBackground = document.querySelector(".blur_on_cart");
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -40,6 +42,7 @@ const updateCartState = () => {
 
 const openCart = () => {
   openCartIcon.classList.toggle("open");
+  blurBackground.classList.toggle("blur_background");
 };
 
 const createCartProductTemplate = (cartProduct) => {
@@ -134,18 +137,16 @@ const addProduct = (event) => {
   cartAnimation();
 };
 
-function showProducts() {
-  productsContainer.innerHTML = objectData
-    .map((product) => {
-      const { id, title, price, image1 } = product;
+const productTemplate = (product) => {
+  const { id, title, price, image1 } = product;
 
-      return `
+  return `
       <div class="product">
-       <img src="${image1}" alt="${title}" class="product_image" data-id="${id}"/>
+       <img src="${image1}" alt="${title}" class="product_image button_magnet" data-id="${id}"/>
        <h3>${title}</h3>
        <div class="product_add">
        <span>$${price}</span>
-       <button class="btn-add"
+       <button class="btn-add button_magnet"
        data-id="${id}"
        data-name="${title}"
        data-img="${image1}"
@@ -155,9 +156,7 @@ function showProducts() {
        </button>
        </div>
       </div>`;
-    })
-    .join("");
-}
+};
 
 const quantitySumHandler = (id) => {
   const existingCartProduct = cart.find((item) => item.id == id);
@@ -197,40 +196,69 @@ const quantityHandler = (e) => {
   updateCartState();
 };
 
-const alternateProductImages = () => {
-  const images = document.querySelectorAll(".product_image");
-  images.forEach((image) => {
-    const searchInfo = toGetId => objectData.find( item => item.id === toGetId );
+const alternateProductImages = (imagesArray) => {
+  imagesArray.forEach((image) => {
+    const searchInfo = (toGetId) => {
+      return dataShowMore.products[0].find((item) => item.id === toGetId);
+    };
 
-    image.addEventListener("mouseover",(event) => image.src = searchInfo(event.target.dataset.id).secondImage);
+    image.addEventListener("mouseover", (event) => {
+      image.src = searchInfo(event.target.dataset.id).secondImage;
+    });
 
-    image.addEventListener("mouseout", event => image.src = searchInfo(event.target.dataset.id).image1);
+    image.addEventListener("mouseout", (event) => {
+      image.src = searchInfo(event.target.dataset.id).image1;
+    });
   });
 
   checkoutBtn.addEventListener("click", successPurchase);
-}
+};
 
 const emptyCart = () => {
   cart = [];
-  localStorage.removeItem('cart');
+  localStorage.removeItem("cart");
   updateCartState();
-}
+};
+
+const renderProducts = (productList) => {
+  productsContainer.innerHTML += productList
+    .map((item) => productTemplate(item))
+    .join("");
+};
+
+const renderMoreProducts = () => {
+  dataShowMore.current += 1;
+
+  const isLastIndex = () => {
+    return dataShowMore.current === dataShowMore.limit - 1;
+  };
+
+  let { products, current } = dataShowMore;
+
+  renderProducts(products[current]);
+
+  if (isLastIndex()) {
+    showMoreBtn.classList.add("showing_more");
+  }
+};
 
 function init() {
+  renderProducts(dataShowMore.products[0]);
   updateBubble();
   updateCartState();
-  showProducts();
   cartIcon.addEventListener("click", openCart);
   productsContainer.addEventListener("click", addProduct);
   document.addEventListener("DOMContentLoaded", renderCart);
   cartContainer.addEventListener("click", quantityHandler);
   // Funcion que al hacer scroll cierra el carrito
-  document.addEventListener("scroll", () =>
-    openCartIcon.classList.remove("open")
-  );
-  alternateProductImages()
-  emptyCartButton.addEventListener('click', emptyCart)
+  document.addEventListener("scroll", () => {
+    openCartIcon.classList.remove("open");
+    blurBackground.classList.remove("blur_background");
+  });
+  emptyCartButton.addEventListener("click", emptyCart);
+  const images = document.querySelectorAll(".product_image");
+  alternateProductImages(images);
+  showMoreBtn.addEventListener("click", renderMoreProducts);
 }
 
 init();
-

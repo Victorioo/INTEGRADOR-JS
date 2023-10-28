@@ -1,0 +1,14 @@
+{
+  "name": "integrador-js",
+  "version": "1.0.0",
+  "description": "Integrador de JavaScript - NUCBA",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tukeen",
+  "license": "ISC",
+  "dependencies": {
+    "magnet-mouse": "github:fluffy-factory/magnet-mouse"
+  }
+}
