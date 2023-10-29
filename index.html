@@ -1,107 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ecommerce - Victorio</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
 
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./animation.css" />
-    <link rel="stylesheet" href="./cart-styles.css" />
-    <link rel="stylesheet" href="./mediaquerys.css" />
-  </head>
-  <body>
-    <div class="blur_on_cart"></div>
-    <header>
-      <h1>Vim</h1>
-      <ul>
-        <li class="magnet"><a href="#">Home </a></li>
-        <li class="magnet">
-          <a href="#">Shop <i class="fa-solid fa-chevron-down"></i></a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecommerce - Victorio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./animation.css" />
+  <link rel="stylesheet" href="./cart-styles.css" />
+  <link rel="stylesheet" href="./mediaquerys.css" />
+</head>
+
+<body>
+  <div class="blur_on_cart"></div>
+  <header>
+    <h1>Vim</h1>
+    <ul>
+      <li class="magnet"><a href="#">Home </a></li>
+      <li class="magnet">
+        <a href="#">Shop <i class="fa-solid fa-chevron-down"></i></a>
+      </li>
+      <li class="magnet"><a href="#">About</a></li>
+      <li class="magnet"><a href="#">Contact</a></li>
+      <div>
+        <li class="svg magnet">
+          <img src="./assets/cart.svg" class="cart_icon svg" />
+          <small class="cart_bubble"></small>
         </li>
-        <li class="magnet"><a href="#">About</a></li>
-        <li class="magnet"><a href="#">Contact</a></li>
-        <div>
-          <li class="svg magnet">
-            <img src="./assets/cart.svg" class="cart_icon svg" />
-            <small class="cart_bubble"></small>
-          </li>
-          <button>
-            <i class="fa-solid fa-bars"></i>
-          </button>
-        </div>
-      </ul>
-    </header>
-    <nav class="cart_container">
-      <ul class="cart_products"></ul>
-      <div class="checkout_container">
-        <h4>Total:</h4>
-        <span class="price"></span>
-        <button class="checkout-btn">Checkout</button>
-        <button class="empty_cart magnet">Vaciar carrito</button>
-      </div>
-    </nav>
-    <section class="hero">
-      <h1>Beauty & Cosmetic <br />Products</h1>
-    </section>
-    <main>
-      <section class="organic__section">
-        <img src="https://vimcosmo.com/pics/organic.webp" />
-        <div>
-          <h1>Made Only With Organic Materials</h1>
-          <p>
-            Feel good about yourself with our 100% vegan formulas free from
-            phthalates, parabens, triclosan, triclocarban, and hydroquinone.
-          </p>
-          <button class="button_magnet">Browse products</button>
-        </div>
-      </section>
-      <!-- Esta seccion se renderiza con JS. -->
-      <section class="popular-products__section">
-        <h1>Popular Products</h1>
-        <div class="products__container"></div>
-        <button class="button show_more_btn button_magnet" type="button">
-          <span class="button__text">Show more</span>
-          <span class="button__icon">
-            <img src="./assets/showMore.svg" alt="" />
-          </span>
+        <button>
+          <i class="fa-solid fa-bars"></i>
         </button>
-      </section>
-      <section class="cards_section">
-        <div class="card">
-          <img src="https://vimcosmo.com/pics/easy-shop.png" class="magnet" />
-          <h2>Easy to shop</h2>
-          <p>
-            Beauty should be accessible to all, regardless of location or
-            financial ability.
-          </p>
-        </div>
-        <div class="card">
-          <img src="https://vimcosmo.com/pics/good-skin.png" class="magnet" />
-          <h2>Good For Skin</h2>
-          <p>
-            If there's one place to invest in your beauty routine, it's here.
-            Get your skincare right.
-          </p>
-        </div>
-        <div class="card">
-          <img src="https://vimcosmo.com/pics/best-brands.png" class="magnet" />
-          <h2>Best Brands</h2>
-          <p>
-            We stock incredible products from more than 500 brands. Authenticity
-            is guaranteed.
-          </p>
-        </div>
-      </section>
-    </main>
-    <script src="https://cdn.jsdelivr.net/gh/fluffy-factory/magnet-mouse@latest/lib/magnet-mouse.min.js"></script>
-    <script src="./assets/data.js"></script>
-    <script src="./assets/cart.js"></script>
-    <script src="./assets/animations.js"></script>
-    <script src="./assets/contact.js"></script>
-  </body>
+      </div>
+    </ul>
+  </header>
+  <nav class="cart_container">
+    <ul class="cart_products"></ul>
+    <div class="checkout_container">
+      <h4>Total:</h4>
+      <span class="price"></span>
+      <button class="checkout-btn">Checkout</button>
+      <button class="empty_cart magnet">Vaciar carrito</button>
+    </div>
+  </nav>
+  <section class="hero">
+    <h1>Beauty & Cosmetic <br />Products</h1>
+  </section>
+  <main>
+    <section class="organic__section">
+      <img src="https://vimcosmo.com/pics/organic.webp" />
+      <div>
+        <h1>Made Only With Organic Materials</h1>
+        <p>
+          Feel good about yourself with our 100% vegan formulas free from
+          phthalates, parabens, triclosan, triclocarban, and hydroquinone.
+        </p>
+        <button class="button_magnet">Browse products</button>
+      </div>
+    </section>
+    <!-- Esta seccion se renderiza con JS. -->
+    <section class="popular-products__section">
+      <h1>Popular Products</h1>
+      <div class="products__container"></div>
+      <button class="button show_more_btn button_magnet" type="button">
+        <span class="button__text">Show more</span>
+        <span class="button__icon">
+          <img src="./assets/showMore.svg" alt="" />
+        </span>
+      </button>
+    </section>
+    <section class="cards_section">
+      <div class="card">
+        <img src="https://vimcosmo.com/pics/easy-shop.png" class="magnet" />
+        <h2>Easy to shop</h2>
+        <p>
+          Beauty should be accessible to all, regardless of location or
+          financial ability.
+        </p>
+      </div>
+      <div class="card">
+        <img src="https://vimcosmo.com/pics/good-skin.png" class="magnet" />
+        <h2>Good For Skin</h2>
+        <p>
+          If there's one place to invest in your beauty routine, it's here.
+          Get your skincare right.
+        </p>
+      </div>
+      <div class="card">
+        <img src="https://vimcosmo.com/pics/best-brands.png" class="magnet" />
+        <h2>Best Brands</h2>
+        <p>
+          We stock incredible products from more than 500 brands. Authenticity
+          is guaranteed.
+        </p>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/gh/fluffy-factory/magnet-mouse@latest/lib/magnet-mouse.min.js"></script>
+  <script src="./assets/data.js"></script>
+  <script src="./assets/cart.js"></script>
+  <script src="./assets/animations.js"></script>
+  <script src="./assets/contact.js"></script>
+</body>
+
 </html>
