@@ -53,6 +53,8 @@
     align-items: center;
     gap: 5px;
     position: relative;
+    cursor: pointer;
+    padding: 10px;
   }
   
   header .menu_btn span {
@@ -76,7 +78,6 @@
   }
   
   .navbar_open span:nth-child(3) {
-    position: absolute;
     transform: rotate(225deg);
   }
 
