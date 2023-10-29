@@ -17,12 +17,22 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 // Función para actualizar el estado del carrito
 
-const updateBubble = () => {
-  cartBubble.textContent = cart.reduce((acc, curr) => acc + curr.quantity, 0);
+const openCart = () => {
+  openMenuBtn.classList.remove('navbar_open')
+  header.classList.remove('responsive_open')
+  openCartIcon.classList.toggle("open");
+  blurBackground.classList.toggle("blur_background");
 };
 
-const showCartTotal = () => {
-  priceText.innerHTML = `$${cartTotal().toFixed(2)}`;
+const closeCartAndMenu = () => {
+  openCartIcon.classList.remove("open");
+  blurBackground.classList.remove("blur_background");
+  openMenuBtn.classList.remove("navbar_open");
+  header.classList.remove('responsive_open');
+};
+
+const updateBubble = () => {
+  cartBubble.textContent = cart.reduce((acc, curr) => acc + curr.quantity, 0);
 };
 
 const cartTotal = () => {
@@ -32,17 +42,16 @@ const cartTotal = () => {
   );
 };
 
+const showCartTotal = () => {
+  priceText.innerHTML = `$${cartTotal().toFixed(2)}`;
+};
+
 const updateCartState = () => {
   renderCart();
   updateBubble();
   cartTotal();
   showCartTotal();
   btnStatus();
-};
-
-const openCart = () => {
-  openCartIcon.classList.toggle("open");
-  blurBackground.classList.toggle("blur_background");
 };
 
 const createCartProductTemplate = (cartProduct) => {
@@ -102,6 +111,10 @@ const newCartProduct = (product) => {
   renderCart();
 };
 
+const isExistingProduct = (product) => {
+  return cart.find((item) => item.id == product.id);
+};
+
 const addUnitProduct = (product) => {
   cart = cart.map((cartProduct) =>
     cartProduct.id === product.id
@@ -110,10 +123,6 @@ const addUnitProduct = (product) => {
   );
 
   updateCartState();
-};
-
-const isExistingProduct = (product) => {
-  return cart.find((item) => item.id == product.id);
 };
 
 const cartAnimation = () => {
@@ -242,11 +251,6 @@ const renderMoreProducts = () => {
   }
 };
 
-const closeCart = () => {
-  openCartIcon.classList.remove("open");
-  blurBackground.classList.remove("blur_background");
-}
-
 function init() {
   renderProducts(dataShowMore.products[0]);
   updateBubble();
@@ -256,8 +260,8 @@ function init() {
   document.addEventListener("DOMContentLoaded", renderCart);
   cartContainer.addEventListener("click", quantityHandler);
   // Funcion que al hacer scroll cierra el carrito
-  window.addEventListener("scroll", closeCart);
-  blurBackground.addEventListener("click", closeCart )
+  window.addEventListener("scroll", closeCartAndMenu);
+  blurBackground.addEventListener("click", closeCartAndMenu);
   emptyCartButton.addEventListener("click", emptyCart);
   const images = document.querySelectorAll(".product_image");
   alternateProductImages(images);

@@ -31,13 +31,6 @@ header div {
   gap: 2rem;
 }
 
-header button {
-  display: none;
-  border: none;
-  font-size: 2rem;
-  background: none;
-}
-
 .downHeader {
   height: 70px;
   padding: 2.5rem 5rem;
@@ -78,6 +71,10 @@ header a {
 
 header a:hover {
   color: white;
+}
+
+header .menu_btn {
+  position: relative;
 }
 
 .hero {
@@ -346,4 +343,8 @@ main {
 
 .magnet {
   transition: all 500ms ease;
+}
+
+.contact_form {
+  background: url('');
 }
