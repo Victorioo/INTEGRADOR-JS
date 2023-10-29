@@ -242,6 +242,11 @@ const renderMoreProducts = () => {
   }
 };
 
+const closeCart = () => {
+  openCartIcon.classList.remove("open");
+  blurBackground.classList.remove("blur_background");
+}
+
 function init() {
   renderProducts(dataShowMore.products[0]);
   updateBubble();
@@ -251,10 +256,8 @@ function init() {
   document.addEventListener("DOMContentLoaded", renderCart);
   cartContainer.addEventListener("click", quantityHandler);
   // Funcion que al hacer scroll cierra el carrito
-  document.addEventListener("scroll", () => {
-    openCartIcon.classList.remove("open");
-    blurBackground.classList.remove("blur_background");
-  });
+  window.addEventListener("scroll", closeCart);
+  blurBackground.addEventListener("click", closeCart )
   emptyCartButton.addEventListener("click", emptyCart);
   const images = document.querySelectorAll(".product_image");
   alternateProductImages(images);

@@ -9,11 +9,25 @@
   z-index: -50;
   background-color: rgba(245, 245, 245, 0.2);
   transition: backdrop-filter 350ms;
+  color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .blur_background {
   backdrop-filter: blur(10px) brightness(50%);
   z-index: 10;
+}
+
+.blur_background h1 {
+  font-weight: 500;
+  color: transparent;
+  background: linear-gradient(90deg, pink, violet);
+  mix-blend-mode: screen;
+  font-size: 1.5rem;
+  background-clip: border-box;
+  -webkit-background-clip: text;
 }
 
 .animation {
