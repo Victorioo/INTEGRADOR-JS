@@ -324,7 +324,6 @@
   }
   
   .navbar_open span:nth-child(3) {
-    position: absolute;
     transform: rotate(225deg);
   }
 
