@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="./animation.css" />
   <link rel="stylesheet" href="./cart-styles.css" />
   <link rel="stylesheet" href="./mediaquerys.css" />
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body>
@@ -20,12 +22,12 @@
   <header>
     <h1>Vim</h1>
     <ul>
-      <li class="magnet"><a href="#">Home </a></li>
+      <li class="magnet"><a href="#">Inicio</a></li>
       <li class="magnet">
-        <a href="#">Shop <i class="fa-solid fa-chevron-down"></i></a>
+        <a href="#">Tienda <i class="fa-solid fa-chevron-down"></i></a>
       </li>
-      <li class="magnet"><a href="#">About</a></li>
-      <li class="magnet"><a href="#">Contact</a></li>
+      <li class="magnet"><a href="#">Acerca de</a></li>
+      <li class="magnet"><a href="#">Contacto</a></li>
     </ul>
     <div class="cart_icon_container">
       <li class="svg magnet">
@@ -36,7 +38,7 @@
         <span></span>
         <span></span>
         <span></span>
-      <li/>
+        <li />
     </div>
   </header>
   <nav class="cart_container">
@@ -44,31 +46,31 @@
     <div class="checkout_container">
       <h4>Total:</h4>
       <span class="price"></span>
-      <button class="checkout-btn">Checkout</button>
+      <button class="checkout-btn">Comprar</button>
       <button class="empty_cart magnet">Vaciar carrito</button>
     </div>
   </nav>
   <section class="hero">
-    <h1>Beauty & Cosmetic <br />Products</h1>
+    <h1>Productos de belleza y<br /> maquillaje</h1>
   </section>
   <main>
     <section class="organic__section">
       <img src="https://vimcosmo.com/pics/organic.webp" />
       <div>
-        <h1>Made Only With Organic Materials</h1>
+        <h1>Hecho solo con materiales organicos</h1>
         <p>
-          Feel good about yourself with our 100% vegan formulas free from
-          phthalates, parabens, triclosan, triclocarban, and hydroquinone.
+          Sientete bien con tu cuerpo con nuestra formula 100% vegan y libre de ftalatos, triclosan, triclocarban y
+          hydroquinone
         </p>
-        <button class="button_magnet">Browse products</button>
+        <button class="button_magnet">Ver productos</button>
       </div>
     </section>
     <!-- Esta seccion se renderiza con JS. -->
     <section class="popular-products__section">
-      <h1>Popular Products</h1>
+      <h1>Productos populares</h1>
       <div class="products__container"></div>
       <button class="button show_more_btn button_magnet" type="button">
-        <span class="button__text">Show more</span>
+        <span class="button__text">Ver más</span>
         <span class="button__icon">
           <img src="./assets/showMore.svg" alt="" />
         </span>
@@ -77,39 +79,39 @@
     <section class="cards_section">
       <div class="card">
         <img src="https://vimcosmo.com/pics/easy-shop.png" class="magnet" />
-        <h2>Easy to shop</h2>
+        <h2>Fácil de comprar</h2>
         <p>
-          Beauty should be accessible to all, regardless of location or
-          financial ability.
+          La belleza debe ser accesible para todos, sin importar la ubicación o tu capacidad financiera
         </p>
       </div>
       <div class="card">
         <img src="https://vimcosmo.com/pics/good-skin.png" class="magnet" />
         <h2>Good For Skin</h2>
         <p>
-          If there's one place to invest in your beauty routine, it's here.
-          Get your skincare right.
+          Si hay un lugar para invertir en tu rutina de belleza, es acá, obtené un buen skincare.
         </p>
       </div>
       <div class="card">
         <img src="https://vimcosmo.com/pics/best-brands.png" class="magnet" />
         <h2>Best Brands</h2>
         <p>
-          We stock incredible products from more than 500 brands. Authenticity
-          is guaranteed.
+          Tenemos stock de increibles productos de más de 500 marcas. Autenticidad garantizada
         </p>
       </div>
     </section>
-    <section class="contact_form">
-
-    </section>
+    <div class="parallax">
+      <form class="parallax-info">
+        <h1>Suscribite para estar notificado</h1>
+        <input type="email" placeholder="Email" id="contact_input">
+        <button class="submit_button">Suscribirse</button>
+      </form>
+    </div>
   </main>
-  <script src="https://cdn.jsdelivr.net/gh/fluffy-factory/magnet-mouse@latest/lib/magnet-mouse.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   <script src="./assets/index.js"></script>
   <script src="./assets/data.js"></script>
   <script src="./assets/cart.js"></script>
-  <script src="./assets/animations.js"></script>
-  <script src="./assets/contact.js"></script>
+  <script src="./assets/form.js" type="module"></script>
 </body>
 
 </html>

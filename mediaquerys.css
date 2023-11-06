@@ -165,6 +165,7 @@
   .open {
     transform: translateY(0);
   }
+
 }
 
 @media (max-width: 645px) {

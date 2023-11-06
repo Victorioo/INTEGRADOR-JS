@@ -9,6 +9,7 @@
   "author": "tukeen",
   "license": "ISC",
   "dependencies": {
-    "magnet-mouse": "github:fluffy-factory/magnet-mouse"
+    "magnet-mouse": "github:fluffy-factory/magnet-mouse",
+    "toastify-js": "^1.12.0"
   }
 }
