@@ -419,5 +419,14 @@ footer ul {
 
 footer i {
   cursor: pointer;
-  color: black;
+  background-color: black;
+  border-radius: 100%;
+  padding: 10px;
+  color: white;
+  transition: transform 100ms ease,color 200ms ease;
+}
+
+footer i:hover {
+  transform: scale(1.05);
+  color: pink;
 }
