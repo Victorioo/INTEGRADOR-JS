@@ -1,3 +1,8 @@
+
+body {
+  background-color: red;
+}
+
 @media (max-width: 1280px) {
 
   .cart_container {
@@ -244,10 +249,12 @@
     gap: 20px;
     max-width: 100%;
     margin: 0 auto;
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .product {
-    max-width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
   }
 
   .product_add {
